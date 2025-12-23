@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
 use App\Http\Controllers\MainController;
+use App\Models\Catalog;
 
 Route::get('/', [MainController::class, 'index']);
 Route::get('/about', [MainController::class, 'about']);
@@ -14,6 +14,7 @@ Route::get('/review', function () {
 Route::post('/review/submit', function (Illuminate\Http\Request $request) {
     return redirect('/review')->with('success', 'Отзыв успешно отправлен!');
 });
+
 // Route::get('/catalog', function () {
 //     return view('catalog');
 // });
